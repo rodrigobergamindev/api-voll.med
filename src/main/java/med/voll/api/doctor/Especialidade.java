@@ -1,8 +1,10 @@
-package med.voll.api.doctor.dto;
+package med.voll.api.doctor;
 
 public enum Especialidade {
 
     ORTOPEDIA,
     CARDIOLOGIA,
-    
+    GINECOLOGIA,
+    DERMATOLOGIA
+
 }
