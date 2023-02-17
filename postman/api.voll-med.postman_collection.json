@@ -1,18 +1,67 @@
 {
 	"info": {
-		"_postman_id": "369c7cdd-2172-4dd0-acb7-956fc5dd61a1",
+		"_postman_id": "e3148b61-b3ca-4e56-bf18-9ab9a68a9329",
 		"name": "api.voll-med",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7336078"
 	},
 	"item": [
 		{
-			"name": "createDoctor",
+			"name": "doctors",
+			"item": [
+				{
+					"name": "createDoctor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"nome\": \"Agatha Santos\",\r\n\"email\": \"agatha.santos@vollmed.api\",\r\n\"telefone\":\"11959943034\",\r\n\"crm\": \"933377\",\r\n\"especialidade\": \"ORTOPEDIA\",\r\n\"endereco\": {\r\n    \"logradouro\": \"rua 1\",\r\n    \"bairro\": \"bairro\",\r\n    \"cep\": \"08230020\",\r\n    \"cidade\": \"Brasilia\",\r\n    \"uf\": \"DF\",\r\n    \"numero\": \"1\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/doctors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"doctors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/doctors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"doctors"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "createPacient",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"nome\": \"João Carlos\",\r\n\"email\": \"joao.carlos@vollmed.api\",\r\n\"crm\": \"933399\",\r\n\"especialidade\": \"ORTOPEDIA\",\r\n\"endereco\": {\r\n    \"logradouro\": \"rua 1\",\r\n    \"bairro\": \"bairro\",\r\n    \"cep\": \"08230020\",\r\n    \"cidade\": \"Brasilia\",\r\n    \"uf\": \"DF\",\r\n    \"numero\": \"1\"\r\n    }\r\n}",
+					"raw": "{\r\n\"nome\": \"Rodrigo Bergamin\",\r\n\"email\": \"rb.bergamin@gmail.com\",\r\n\"telefone\":\"11959943034\",\r\n\"cpf\": \"45177620840\",\r\n\"endereco\": {\r\n    \"logradouro\": \"rua 1\",\r\n    \"bairro\": \"bairro\",\r\n    \"cep\": \"08230020\",\r\n    \"cidade\": \"Brasilia\",\r\n    \"uf\": \"DF\",\r\n    \"numero\": \"1\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -20,12 +69,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{host}}/doctors",
+					"raw": "{{host}}/pacients",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
-						"doctors"
+						"pacients"
 					]
 				}
 			},
