@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import med.voll.api.doctor.Especialidade;
 import med.voll.api.doctor.dto.CreateDoctorDTO;
+import med.voll.api.doctor.dto.UpdateDoctorDTO;
 import med.voll.api.endereco.Endereco;
 
 @Table(name = "doctors")
@@ -42,4 +43,18 @@ public class Doctor {
 
     }
 
+    public void update(UpdateDoctorDTO data) {
+
+        if(data.nome() != null){
+            this.nome = data.nome();
+        }
+
+        if(data.telefone() != null){
+            this.telefone = data.telefone();
+        }
+
+        if(data.endereco() != null){
+            this.endereco.update(data.endereco());
+        }
+    }
 }

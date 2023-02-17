@@ -35,7 +35,6 @@ public class Pacient {
 
 
     public Pacient(CreatePacientDTO data){
-
         this.nome = data.nome();
         this.email = data.email();
         this.cpf = data.cpf();
